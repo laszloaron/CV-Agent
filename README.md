@@ -4,7 +4,7 @@ A multi-agent AI system built with [Pydantic AI](https://ai.pydantic.dev/) and t
 
 ## Features
 
-- **Job Analyser**: Scrapes job postings and analyzes them to extract key requirements.
+- **Job Analyser (Jobspy integration)**: Scrapes the latest job postings from indeed using the [Jobspy](https://github.com/cfortuner/jobspy) library.
 - **Developer Stack Finder**: Scans your local project directories to understand the technologies you have experience with and generates project summaries.
 - **CV Writer**: Automatically drafts a targeted CV based on the job requirements, your personal information, and your project history. It uses a **Human-in-the-Loop** approach with the MCP Elicit protocol to interactively ask for any missing personal data.
 - **Self-Correcting CV Review**: Reviews and critiques the generated CV, pointing out missing information or logical inconsistencies based on strict HR criteria.
@@ -13,7 +13,7 @@ A multi-agent AI system built with [Pydantic AI](https://ai.pydantic.dev/) and t
 ## Architecture
 
 The system uses a **chain topology** of agents and servers:
-1. The **Job Analyser Server** finds relevant jobs.
+1. The **Job Analyser Server** finds relevant jobs. It leverages the [Jobspy](https://github.com/speedyapply/JobSpy) library to pull postings based on user parameters.
 2. The **Developer Stack Finder Server** reads local repositories.
 3. The **CV Writer Server** provides structure, prompts the user for missing data (using Elicit), and generates the final document.
 
