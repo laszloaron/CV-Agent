@@ -69,4 +69,4 @@ uv run main.py
 
 ## Monitoring & Observability
 
-This project includes **Arize Phoenix** for comprehensive trace monitoring. While the Docker containers are running, you can view the agent traces, tool calls, and LLM token usage at [http://localhost:6006](http://localhost:6006).
+This project includes [Arize Phoenix](https://arize.com/phoenix/) for comprehensive trace monitoring. While the Docker containers are running, you can view the agent traces, tool calls, and LLM token usage at [http://localhost:6006](http://localhost:6006).
