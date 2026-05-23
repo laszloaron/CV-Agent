@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  developer_stack_finder:
+    build:
+      context: .
+      dockerfile: mcp/developer_stack_finder/Dockerfile
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./mcp/developer_stack_finder/local_projects.yaml:/app/local_projects.yaml
+      - c:/Users/Dell:/Users/Dell
+    restart: unless-stopped
+
+  cv_writer:
+    build:
+      context: .
+      dockerfile: mcp/cv_writer/Dockerfile
+    ports:
+      - "8002:8002"
+    restart: unless-stopped
+
+  job_analyser:
+    build:
+      context: .
+      dockerfile: mcp/job_analyser/Dockerfile
+    ports:
+      - "8003:8003"
+    restart: unless-stopped
+
+  phoenix:
+    image: arizephoenix/phoenix:latest
+    ports:
+      - "6006:6006" # UI and OTLP HTTP collector
+      - "4317:4317" # OTLP gRPC collector
+    restart: unless-stopped

@@ -1,0 +1,4 @@
+mcp==1.27.1
+fastmcp==3.3.1
+PyYAML
+uvicorn
